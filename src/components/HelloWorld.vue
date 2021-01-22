@@ -37,6 +37,7 @@
               min-height="268"
             >
               <!--  -->
+              <Weather> </Weather>
             </v-sheet>
           </v-col>
 
@@ -48,6 +49,7 @@
               min-height="70vh"
               rounded="lg"
             >
+              <Bitcoin> </Bitcoin>
               <!--  -->
             </v-sheet>
           </v-col>
@@ -60,6 +62,7 @@
               rounded="lg"
               min-height="268"
             >
+              <Timer></Timer>
               <!--  -->
             </v-sheet>
           </v-col>
@@ -70,7 +73,16 @@
 </template>
 
 <script>
+  import Weather from './weather.vue';
+  import Bitcoin from './bitcoin.vue';
+  import Timer from './timer.vue';
+
   export default {
+    components: {
+      Weather,
+      Bitcoin,
+      Timer,
+    },
     data: () => ({
       links: [
         'Enter Plants?',
