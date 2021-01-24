@@ -1,25 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar
-      app
-      color="grey"
-      flat
-    >
-      <v-tabs
-        centered
-        class="ml-n9"
-        color="white darken-1"
-      >
-        <v-tab
-          v-for="link in links"
-          :key="link"
-        >
-          {{ link }}
-        </v-tab>
-      </v-tabs>
-
-    </v-app-bar>
-
+    <tab-header></tab-header>
     <v-main class="grey lighten-3">
       <v-container>
         <v-row>
@@ -71,12 +52,14 @@
   import Weather from './weather.vue';
   import Bitcoin from './bitcoin.vue';
   import Timer from './timer.vue';
+  import TabHeader from './tabHeader.vue';
 
   export default {
     components: {
       Weather,
       Bitcoin,
       Timer,
+      TabHeader,
     },
     data: () => ({
       links: [
