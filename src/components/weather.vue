@@ -2,6 +2,7 @@
   <v-app id="inspire">
     <tab-header></tab-header>
     <v-main class="grey lighten-3">
+      <p>We in weather</p>
       <v-container>
         <v-row>
           <v-col
@@ -25,7 +26,6 @@
               min-height="70vh"
               rounded="lg"
             >
-              <Bitcoin> </Bitcoin>
               <!--  -->
             </v-sheet>
           </v-col>
@@ -38,7 +38,6 @@
               rounded="lg"
               min-height="268"
             >
-              <Timer></Timer>
               <!--  -->
             </v-sheet>
           </v-col>
@@ -50,23 +49,14 @@
 
 <script>
   import Weather from './weather.vue';
-  import Bitcoin from './bitcoin.vue';
-  import Timer from './timer.vue';
   import TabHeader from './tabHeader.vue';
 
   export default {
     components: {
       Weather,
-      Bitcoin,
-      Timer,
       TabHeader,
     },
     data: () => ({
-      links: [
-        'Enter Plants?',
-        'Bitcoin',
-        'Timer',
-      ],
     }),
   }
 </script>

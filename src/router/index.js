@@ -9,8 +9,8 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: '/',
+    path: '/weather',
+    name: 'Weather',
     component: Weather
   },
   {
