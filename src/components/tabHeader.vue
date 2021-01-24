@@ -12,8 +12,9 @@
         <v-tab
           v-for="link in links"
           :key="link"
+          :to='link.route'
         >
-          {{ link }}
+          {{ link.name }}
         </v-tab>
       </v-tabs>
 
@@ -25,9 +26,9 @@
 export default {
   data: () => ({
     links: [
-      "Weather",
-      "Bitcoin",
-      "Tiimer"
+      {name:"Weather",route:'/weather'},
+      {name:"Bitcoin",route:'/bitcoin'},
+      {name:"Timer",route:'/timer'},
     ]
   })
 }
