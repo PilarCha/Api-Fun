@@ -5,26 +5,24 @@ import Timer from '../components/timer.vue'
 import Weather from '../components/weather.vue'
 
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/weather',
     name: 'Weather',
     component: Weather,
-    meta: { transition: 'fade-in-right' },
+
   },
   {
     path: '/bitcoin',
     name: 'Bitcoin',
     component:Bitcoin,
-    meta: { transition: 'fade-in-right' },
   },
   {
     path: '/timer',
     name: 'Timer',
     component:Timer,
-    meta: { transition: 'fade-in-right' },
   },
 ]
 
