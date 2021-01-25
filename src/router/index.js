@@ -11,17 +11,20 @@ const routes = [
   {
     path: '/weather',
     name: 'Weather',
-    component: Weather
+    component: Weather,
+    meta: { transition: 'fade-in-right' },
   },
   {
     path: '/bitcoin',
     name: 'Bitcoin',
-    component:Bitcoin
+    component:Bitcoin,
+    meta: { transition: 'fade-in-right' },
   },
   {
     path: '/timer',
     name: 'Timer',
-    component:Timer
+    component:Timer,
+    meta: { transition: 'fade-in-right' },
   },
 ]
 
