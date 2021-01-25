@@ -18,14 +18,29 @@
 
 <script>
   import TabHeader from './tabHeader.vue';
+  import {mapActions} from "vuex";
 
   export default {
-    components: {
-      TabHeader,
-    },
-    data: () => ({
-    }),
-  }
+      components: {
+        TabHeader,
+      },
+      data () {
+        return {
+          chartData:[],
+        }
+      },
+      mounted() {
+        this.fetchData();
+      },
+      methods: {
+        ...mapActions(["getBTCPrice"]),
+        async fetchData() {
+
+        }
+
+      }
+
+    }
 </script>
 
 <style>
