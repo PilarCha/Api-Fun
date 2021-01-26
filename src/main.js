@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
+import tabHeader from './components/tabHeader';
 
+Vue.component('TabHeader', tabHeader)
 
 Vue.config.productionTip = false
 

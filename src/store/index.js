@@ -15,10 +15,11 @@ export default new Vuex.Store({
   },
   actions: {
     async getBTCPrice(commit) {
-      console.log("we are starting the fetch");
+      print("we are starting the fetch");
       axios.get('https://api.coindesk.com/v1/bpi/historical/close.json')
         .then(res => {
           commit("setChart", res.data);
+          console.log(res.data)
         })
     }
   },

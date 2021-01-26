@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire">
-    <tab-header></tab-header>
     <v-main class="grey lighten-3">
       <p>We in timer</p>
       <v-container>
@@ -50,12 +49,10 @@
 
 <script>
   import Timer from './timer.vue';
-  import TabHeader from './tabHeader.vue';
 
   export default {
     components: {
       Timer,
-      TabHeader,
     },
     data: () => ({
     }),

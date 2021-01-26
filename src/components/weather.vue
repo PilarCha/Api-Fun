@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire">
-    <tab-header />
     <v-main class="grey lighten-3">
         <p>We in weather</p>
         <v-container>
@@ -49,12 +48,10 @@
 
 <script>
   import Weather from './weather.vue';
-  import TabHeader from './tabHeader.vue';
 
   export default {
     components: {
       Weather,
-      TabHeader,
     },
     data: () => ({
     }),

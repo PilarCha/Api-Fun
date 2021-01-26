@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire">
-    <tab-header></tab-header>
     <v-main class="grey lighten-3">
       <v-container>
         <div class="wrapper">
@@ -18,12 +17,10 @@
 </template>
 
 <script>
-  import TabHeader from './tabHeader.vue';
   import {mapActions,mapState} from "vuex";
 
   export default {
       components: {
-        TabHeader,
       },
       data () {
         return {
