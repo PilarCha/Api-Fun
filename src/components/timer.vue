@@ -24,7 +24,6 @@
               min-height="70vh"
               rounded="lg"
             >
-              <Timer></Timer>
               <!--  -->
             </v-sheet>
           </v-col>
@@ -48,11 +47,9 @@
 </template>
 
 <script>
-  import Timer from './timer.vue';
 
   export default {
     components: {
-      Timer,
     },
     data: () => ({
     }),

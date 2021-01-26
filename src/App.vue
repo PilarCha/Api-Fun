@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-        <TabHeader />
+      <TabHeader />
         <router-view />
     </v-main>
   </v-app>

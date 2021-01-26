@@ -13,7 +13,6 @@
                 min-height="268"
               >
                 <!--  -->
-                <Weather> </Weather>
               </v-sheet>
             </v-col>
 
@@ -47,11 +46,9 @@
 </template>
 
 <script>
-  import Weather from './weather.vue';
 
   export default {
     components: {
-      Weather,
     },
     data: () => ({
     }),
