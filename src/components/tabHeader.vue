@@ -10,8 +10,8 @@
         color="white darken-1"
       >
         <v-tab
-          v-for="link in links"
-          :key="link"
+          v-for="(link, idx) in links"
+          :key="idx"
           :to='link.route'
         >
           {{ link.name }}
