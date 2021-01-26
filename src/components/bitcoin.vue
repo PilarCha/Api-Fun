@@ -9,6 +9,7 @@
               <h1 class="heading">Bitcoin Price of the last 31 days</h1>
             </header>
             <canvas class="chart" id="chart" width="400" height="300"></canvas>
+            {{chart}}
           </section>
         </div>
       </v-container>
@@ -18,7 +19,7 @@
 
 <script>
   import TabHeader from './tabHeader.vue';
-  import {mapActions} from "vuex";
+  import {mapActions,mapState} from "vuex";
 
   export default {
       components: {
@@ -29,14 +30,14 @@
           chartData:[],
         }
       },
+      computed: {
+        ...mapState(["chart"]),
+      },
       mounted() {
         this.fetchData();
       },
       methods: {
         ...mapActions(["getBTCPrice"]),
-        async fetchData() {
-
-        }
 
       }
 
