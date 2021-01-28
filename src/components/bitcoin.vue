@@ -8,7 +8,7 @@
     <v-card-text>
       <v-sheet color="rgba(0, 0, 0, .12)">
         <v-sparkline
-          :value="value"
+          :value="BTCPriceArr"
           color="rgba(255, 255, 255, .7)"
           height="100"
           padding="24"
@@ -16,8 +16,8 @@
           :fill="fill"
           smooth
         >
-          <template v-slot:label="item">
-            ${{ item.value }}
+          <template v-for = "date in BTCDateArr">
+            {{ date }}
           </template>
         </v-sparkline>
       </v-sheet>
@@ -28,7 +28,7 @@
         BitCoin Price last 31 days
       </div>
     </v-card-text>
-    {{BTCDate}}
+    {{BTCDateArr}}
     {{BTCPrice}}
   </v-card>
 </template>
@@ -41,15 +41,8 @@
       },
       data: () => ({
         fill:true,
-        value: [
-        423,
-        446,
-        675,
-        510,
-        590,
-        610,
-        760,
-      ],
+        BTCDateArr: [],
+        BTCPriceArr: [],
       }),
       computed: {
         ...mapState(["BTCDate"]),
@@ -58,9 +51,15 @@
       },
       mounted() {
         this.$store.dispatch("getBTCPrice");
+        this.setUpBTCData();
       },
       methods: {
         ...mapActions(["getBTCPrice"]),
+
+        setUpBTCData () {
+          this.BTCDateArr = this.BTCDate;
+          this.BTCPriceArr = this.BTCPrice;
+        }
       },
 
 
