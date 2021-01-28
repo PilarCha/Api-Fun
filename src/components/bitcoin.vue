@@ -31,12 +31,12 @@
         ...mapState(["chart"]),
       },
       mounted() {
-        this.fetchData();
+        this.$store.dispatch("getBTCPrice");
       },
       methods: {
         ...mapActions(["getBTCPrice"]),
+      },
 
-      }
 
     }
 </script>
