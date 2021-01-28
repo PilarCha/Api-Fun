@@ -29,6 +29,7 @@
       </div>
     </v-card-text>
     {{BTCDate}}
+    {{BTCPrice}}
   </v-card>
 </template>
 
@@ -51,7 +52,9 @@
       ],
       }),
       computed: {
-        ...mapState(["BTCDate"],["BTCPrice"]),
+        ...mapState(["BTCDate"]),
+        ...mapState(["BTCPrice"]),
+
       },
       mounted() {
         this.$store.dispatch("getBTCPrice");
