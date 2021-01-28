@@ -6,11 +6,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    chart:[],
+    BTCDate:[],
+    BTCPrice:[],
   },
   mutations: {
-    setChart(state,chart) {
-      state.chart = chart;
+    setChart(state,data) {
+      state.BTCDate = data;
+      state.BTCPrice = data
     }
   },
   actions: {

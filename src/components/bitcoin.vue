@@ -1,19 +1,35 @@
 <template>
-  <v-app id="inspire">
-    <v-main class="grey lighten-3">
-      <v-container>
-        <div class="wrapper">
-          <section class="chart-card">
-            <header>
-              <h1 class="heading">Bitcoin Price of the last 31 days</h1>
-            </header>
-            <canvas class="chart" id="chart" width="400" height="300"></canvas>
-            {{chart}}
-          </section>
-        </div>
-      </v-container>
-    </v-main>
-  </v-app>
+  <v-card
+    class="mx-auto text-center"
+    color="green"
+    dark
+    max-width="1200"
+  >
+    <v-card-text>
+      <v-sheet color="rgba(0, 0, 0, .12)">
+        <v-sparkline
+          :value="value"
+          color="rgba(255, 255, 255, .7)"
+          height="100"
+          padding="24"
+          stroke-linecap="round"
+          :fill="fill"
+          smooth
+        >
+          <template v-slot:label="item">
+            ${{ item.value }}
+          </template>
+        </v-sparkline>
+      </v-sheet>
+    </v-card-text>
+
+    <v-card-text>
+      <div class="display-1 font-weight-thin">
+        BitCoin Price last 31 days
+      </div>
+    </v-card-text>
+    {{BTCDate}}
+  </v-card>
 </template>
 
 <script>
@@ -22,13 +38,20 @@
   export default {
       components: {
       },
-      data () {
-        return {
-          chartData:[],
-        }
-      },
+      data: () => ({
+        fill:true,
+        value: [
+        423,
+        446,
+        675,
+        510,
+        590,
+        610,
+        760,
+      ],
+      }),
       computed: {
-        ...mapState(["chart"]),
+        ...mapState(["BTCDate"],["BTCPrice"]),
       },
       mounted() {
         this.$store.dispatch("getBTCPrice");
