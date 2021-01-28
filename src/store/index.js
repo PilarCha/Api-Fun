@@ -11,8 +11,10 @@ export default new Vuex.Store({
   },
   mutations: {
     setChart(state,data) {
-      state.BTCDate = data;
-      state.BTCPrice = data
+      Object.keys(data.bpi).forEach(function(key) {
+        state.BTCPrice.push(data.bpi[key]);
+        state.BTCDate.push(key);
+      })
     }
   },
   actions: {
