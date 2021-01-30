@@ -34,15 +34,13 @@
 </template>
 
 <script>
-  import {mapActions,mapState} from "vuex";
+  import {mapState} from "vuex";
 
   export default {
       components: {
       },
       data: () => ({
         fill:true,
-        BTCDateArr: [],
-        BTCPriceArr: [],
       }),
 
       computed: mapState(["BTCDate", "BTCPrice"]),
@@ -50,11 +48,6 @@
       mounted() {
         this.$store.dispatch("getBTCPrice");
       },
-      methods: {
-        ...mapActions(["getBTCPrice"]),
-
-      },
-
 
     }
 </script>
