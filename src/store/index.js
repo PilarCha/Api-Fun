@@ -15,7 +15,7 @@ export default new Vuex.Store({
       Object.keys(data.bpi).forEach(function(key) {
         state.BTCPrice.push(data.bpi[key]);
         // state.BTCDate.push(key);
-        state.BTCDate.push(moment(key).format("MM/DD/YY"));
+        state.BTCDate.push(moment(key).format("MM/DD"));
       })
     }
   },
