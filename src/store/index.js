@@ -14,16 +14,18 @@ export default new Vuex.Store({
     setChart(state,data) {
       Object.keys(data.bpi).forEach(function(key) {
         state.BTCPrice.push(data.bpi[key]);
-        // state.BTCDate.push(key);
         state.BTCDate.push(moment(key).format("MM/DD"));
       })
     }
   },
   actions: {
-    async getBTCPrice({commit}) {
-      let res = await axios.get('https://api.coindesk.com/v1/bpi/historical/close.json')
+    async getBTCPrice({commit, state}) {
+      if(state.BTCDate.length == 0) {
+        let res = await axios.get('https://api.coindesk.com/v1/bpi/historical/close.json')
 
-      commit("setChart", res.data);
+        commit("setChart", res.data);
+      }
+
     }
   },
   modules: {
