@@ -5,6 +5,13 @@
     dark
     max-width="1200"
   >
+  <v-progress-circular
+    v-if="loading"
+    :size="70"
+    :width="7"
+    color="purple"
+    indeterminate
+  ></v-progress-circular>
     <v-card-text>
       <v-sheet color="rgba(0, 0, 0, .12)">
         <v-sparkline
@@ -21,14 +28,6 @@
             {{ date }}
           </template>
         </v-sparkline>
-        <svg viewbox="0 0 300 125" v-if="loading"></svg>
-				<v-progress-circular
-          v-if="loading"
-          class="loader"
-          :size="50"
-          color="purple"
-          indeterminate >
-				</v-progress-circular>
       </v-sheet>
     </v-card-text>
 
@@ -58,7 +57,7 @@
       mounted() {
         this.loading = true;
         this.$store.dispatch("getBTCPrice");
-        this.loading = true;
+        this.loading = false;
       },
 
     }
