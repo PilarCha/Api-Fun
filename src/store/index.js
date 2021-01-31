@@ -22,10 +22,8 @@ export default new Vuex.Store({
     async getBTCPrice({commit, state}) {
       if(state.BTCDate.length == 0) {
         let res = await axios.get('https://api.coindesk.com/v1/bpi/historical/close.json')
-
         commit("setChart", res.data);
       }
-
     }
   },
   modules: {

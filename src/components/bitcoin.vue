@@ -8,11 +8,12 @@
     <v-card-text>
       <v-sheet color="rgba(0, 0, 0, .12)">
         <v-sparkline
+          v-if="!loading"
           :value="BTCPrice"
           color="rgba(255, 255, 255, .7)"
           height="100"
           padding="24"
-          stroke-linecap="round"
+          stroke-linecap="square"
           :fill="fill"
           smooth
         >
@@ -20,6 +21,14 @@
             {{ date }}
           </template>
         </v-sparkline>
+        <svg viewbox="0 0 300 125" v-if="loading"></svg>
+				<v-progress-circular
+          v-if="loading"
+          class="loader"
+          :size="50"
+          color="purple"
+          indeterminate >
+				</v-progress-circular>
       </v-sheet>
     </v-card-text>
 
@@ -41,12 +50,15 @@
       },
       data: () => ({
         fill:true,
+        loading: true,
       }),
 
       computed: mapState(["BTCDate", "BTCPrice"]),
 
       mounted() {
+        this.loading = true;
         this.$store.dispatch("getBTCPrice");
+        this.loading = true;
       },
 
     }
@@ -84,5 +96,11 @@ html, body {
 }
 .chart{
   max-width: 1024px;
+}
+
+.loader  {
+  position: inherit !important;
+  top: calc(50%-25px);
+  left: calc(50%-25px);
 }
 </style>
